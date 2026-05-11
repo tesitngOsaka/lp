@@ -11,23 +11,21 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 });
 ---
 
-<Layout title="工事中">
+<Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">工事中</Fragment>
-      <Fragment slot="desc">現在、このページは準備中です。</Fragment>
+      <Fragment slot="title">About</Fragment>
+      <Fragment slot="desc">実行委員について</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        工事中
+        実行委員
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        このページは現在準備中です。
+        testingOsakaの理念に共感し、大阪をわちゃわちゃと盛り上げる人々を紹介します。
       </p>
     </div>
-    <!-- 以下のチームメンバーセクションはコメントアウトされています。後で編集・復元できます。 -->
-    <!--
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {publishedTeamMembers.map((teamMemberEntry) => (
         <div class="group">
@@ -40,17 +38,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         </div>
       ))}
-    </div>
-    -->
-    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">工事中</h1>
-        <p class="text-lg mt-4 text-slate-600">
-          このページは現在準備中です。
-          <br />
-          元のコンテンツはコメントアウトされていますので、後で簡単に編集できます。
-        </p>
-      </div>
     </div>
   </Container>
 </Layout>
