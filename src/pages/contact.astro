@@ -1,5 +1,4 @@
 ---
-import Contactform from "@/components/contactform.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -9,35 +8,26 @@ import { Icon } from "astro-icon/components";
 <Layout title="Contact">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">お問い合わせ (ダミー)</Fragment>
-      <Fragment slot="desc">これはテスト用のお問い合わせページです。</Fragment>
+      <Fragment slot="title">お問い合わせ</Fragment>
+      <Fragment slot="desc">ご相談やご質問はこちら</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">お問い合わせ (ダミー)</h2>
+        <h2 class="font-medium text-2xl text-gray-800">お問い合わせ</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          このページはテスト目的で作成されており、表示されている情報はすべてダミーです。
-          実際のお問い合わせには対応しておりません。
+          testingosaka(at)googlegroups.com、あるいはDiscordにてご相談ください。
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>ダミー住所 123-4567 ダミー市ダミー区ダミー1-2-3</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:dummy@example.com"
-              >dummy@example.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:000-0000-0000">000-0000-0000</a
-            >
+            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+            <span>testingosaka(at)googlegroups.com</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="simple-icons:discord" />
+            <span>Discordコミュニティ</span>
           </div>
         </div>
-      </div>
-      <div>
-        <Contactform />
       </div>
     </div>
   </Container>

@@ -4,6 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -11,23 +12,21 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 });
 ---
 
-<Layout title="工事中">
+<Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">工事中</Fragment>
-      <Fragment slot="desc">現在、このページは準備中です。</Fragment>
+      <Fragment slot="title">About</Fragment>
+      <Fragment slot="desc">実行委員について</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        工事中
+        実行委員
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        このページは現在準備中です。
+        testingOsakaの理念に共感し、大阪をわちゃわちゃと盛り上げる人々を紹介します。
       </p>
     </div>
-    <!-- 以下のチームメンバーセクションはコメントアウトされています。後で編集・復元できます。 -->
-    <!--
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {publishedTeamMembers.map((teamMemberEntry) => (
         <div class="group">
@@ -37,20 +36,20 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           <div class="mt-4 text-center">
             <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
             <h3 class="text-sm text-slate-500">{teamMemberEntry.data.title}</h3>
+            {teamMemberEntry.data.bio && (
+              <p class="mt-2 text-sm text-slate-600">{teamMemberEntry.data.bio}</p>
+            )}
+            {teamMemberEntry.data.link && (
+              <div class="mt-3 flex justify-center">
+                <a href={teamMemberEntry.data.link} target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-600 text-sm flex items-center gap-1">
+                  <Icon class="w-4 h-4" name="uil:link" />
+                  <span>Website / SNS</span>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       ))}
-    </div>
-    -->
-    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">工事中</h1>
-        <p class="text-lg mt-4 text-slate-600">
-          このページは現在準備中です。
-          <br />
-          元のコンテンツはコメントアウトされていますので、後で簡単に編集できます。
-        </p>
-      </div>
     </div>
   </Container>
 </Layout>
